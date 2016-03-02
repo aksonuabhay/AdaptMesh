@@ -1,0 +1,28 @@
+/PMACRO   
+FINISH
+/PREP7   
+ET,1,SOLID185    
+MPTEMP,,,,,,,,  
+MPTEMP,1,0  
+MPDATA,EX,1,,2e11   
+MPDATA,PRXY,1,,0.3       
+BLOCK,,.5,,.009,,.25,   
+CM,_Y,VOLU  
+VSEL, , , ,       1 
+CM,_Y1,VOLU 
+CHKMSH,'VOLU'   
+CMSEL,S,_Y   
+VSWEEP,_Y1   
+CMDELE,_Y   
+CMDELE,_Y1  
+CMDELE,_Y2      
+FINISH  
+FLST,2,1,5,ORDE,1   
+FITEM,2,5    
+DA,P51X,ALL,
+FLST,2,1,1,ORDE,1   
+FITEM,2,626  
+F,P51X,FY,-100  
+SOLVE   
+)/GOP    ! Resume printing after UNDO process   
+)! We suggest a save at this point  
