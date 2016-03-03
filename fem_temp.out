@@ -1,5 +1,296 @@
- *** ERROR ***
- Another ANSYS job with the same job name (file) is already running in this
- directory or the file.lock file has not been deleted from an abnormally
- terminated ANSYS run.  To disable this check, set the ANSYS_LOCK environment
- variable to OFF.
+
+ ANSYS Multiphysics                                
+
+
+ *------------------------------------------------------------------*
+ |                                                                  |
+ |   W E L C O M E   T O   T H E   A N S Y S (R)  P R O G R A M     |
+ |                                                                  |
+ *------------------------------------------------------------------*
+
+
+
+
+ ***************************************************************
+ *                  ANSYS 15.0 LEGAL NOTICES                   *
+ ***************************************************************
+ *                                                             *
+ * Copyright 2013 SAS IP, Inc.  All rights reserved.           *
+ * Unauthorized use, distribution or duplication is            *
+ * prohibited.                                                 *
+ *                                                             *
+ * Ansys is a registered trademark of ANSYS, Inc. or its       *
+ * subsidiaries in the United States or other countries.       *
+ * See the ANSYS, Inc. online documentation or the ANSYS, Inc. *
+ * documentation CD or online help for the complete Legal      *
+ * Notice.                                                     *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * THIS ANSYS SOFTWARE PRODUCT AND PROGRAM DOCUMENTATION       *
+ * INCLUDE TRADE SECRETS AND CONFIDENTIAL AND PROPRIETARY      *
+ * PRODUCTS OF ANSYS, INC., ITS SUBSIDIARIES, OR LICENSORS.    *
+ * The software products and documentation are furnished by    *
+ * ANSYS, Inc. or its subsidiaries under a software license    *
+ * agreement that contains provisions concerning               *
+ * non-disclosure, copying, length and nature of use,          *
+ * compliance with exporting laws, warranties, disclaimers,    *
+ * limitations of liability, and remedies, and other           *
+ * provisions.  The software products and documentation may be *
+ * used, disclosed, transferred, or copied only in accordance  *
+ * with the terms and conditions of that software license      *
+ * agreement.                                                  *
+ *                                                             *
+ * ANSYS, Inc. is a UL registered                              *
+ * ISO 9001:2008 company.                                      *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * This product is subject to U.S. laws governing export and   *
+ * re-export.                                                  *
+ *                                                             *
+ * For U.S. Government users, except as specifically granted   *
+ * by the ANSYS, Inc. software license agreement, the use,     *
+ * duplication, or disclosure by the United States Government  *
+ * is subject to restrictions stated in the ANSYS, Inc.        *
+ * software license agreement and FAR 12.212 (for non-DOD      *
+ * licenses).                                                  *
+ *                                                             *
+ ***************************************************************
+
+ Point Releases and Patches installed:   
+     
+ ANSYS, Inc. Products 15.0   
+ ANSYS Mechanical Products 15.0  
+ ANSYS Autodyn 15.0  
+ ANSYS LS-DYNA 15.0  
+ ANSYS CFX (includes ANSYS CFD-Post) 15.0
+ ANSYS Fluent (includes ANSYS CFD-Post) 15.0 
+ ANSYS TurboGrid 15.0
+ ANSYS Polyflow (includes ANSYS CFD-Post) 15.0   
+ ANSYS Aqwa 15.0 
+ ANSYS ICEM CFD 15.0 
+ ANSYS Icepak (includes ANSYS CFD-Post) 15.0 
+ Catia, Version 6 15.0   
+ ANSYS, Inc. License Manager 15.0
+
+
+          *****  ANSYS COMMAND LINE ARGUMENTS  *****
+  BATCH MODE REQUESTED (-b)    = LIST
+  INPUT FILE COPY MODE (-c)    = COPY
+  MEMORY REQUESTED (MB)        = 1024        
+  DATABASE SIZE REQUESTED (MB) = 512         
+
+ 00954822          VERSION=WINDOWS x64     RELEASE= 15.0     UP20131014
+ CURRENT JOBNAME=file  16:11:59  MAR 03, 2016 CP=      1.078
+
+     1  /PMACRO 
+     2  FINISH  
+     3  /PREP7  
+     4  ET,1,SOLID185   
+     5  MPTEMP,,,,,,,,  
+     6  MPTEMP,1,0  
+     7  MPDATA,EX,1,,2e11   
+     8  MPDATA,PRXY,1,,0.3  
+     9  BLOCK,,.5,,.009,,.25,   
+    10  CM,_Y,VOLU  
+    11  VSEL, , , ,       1 
+    12  CM,_Y1,VOLU 
+    13  CHKMSH,'VOLU'   
+    14  CMSEL,S,_Y  
+    15  VSWEEP,_Y1  
+    16  CMDELE,_Y   
+    17  CMDELE,_Y1  
+    18  CMDELE,_Y2  
+    19  FINISH  
+    20  FLST,2,1,5,ORDE,1   
+    21  FITEM,2,5   
+    22  DA,P51X,ALL,
+    23  FLST,2,1,1,ORDE,1   
+    24  FITEM,2,626 
+    25  F,P51X,FY,-100  
+    26  SOLVE   
+    27  )/GOP    ! Resume printing after UNDO process   
+    28  )! We suggest a save at this point  
+    29  /PREP7  
+    30  EWRITE,'eout.txt'   
+    31  NWRITE,'nout.txt'   
+
+ RUN SETUP PROCEDURE FROM FILE= C:\Program Files\ANSYS Inc\v150\ANSYS\apdl\start150.ans
+
+ /INPUT FILE= C:\Program Files\ANSYS Inc\v150\ANSYS\apdl\start150.ans  LINE=       0
+
+ LOG the macro commands for replay.
+1
+
+ ***** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 15.0      *****
+ ANSYS Multiphysics                                
+ 00954822          VERSION=WINDOWS x64   16:12:00  MAR 03, 2016 CP=      1.156
+
+                                                                               
+
+
+          ***** ANSYS ANALYSIS DEFINITION (PREP7) *****
+
+ ELEMENT TYPE      1 IS SOLID185     3-D 8-NODE STRUCTURAL SOLID 
+  KEYOPT( 1- 6)=        0      0      0        0      0      0
+  KEYOPT( 7-12)=        0      0      0        0      0      0
+  KEYOPT(13-18)=        0      0      0        0      0      0
+
+ CURRENT NODAL DOF SET IS  UX    UY    UZ  
+  THREE-DIMENSIONAL MODEL
+
+ TEMPERATURE TABLE ERASED.
+
+ *** PROPERTY TEMPERATURE TABLE    NUM. TEMPS=  1 ***
+ SLOC=   1     0.000000    
+
+ PROPERTY TABLE EX    MAT=      1  NUM. POINTS=  1
+ SLOC=   1    0.2000000E+12
+
+ PROPERTY TABLE PRXY  MAT=      1  NUM. POINTS=  1
+ SLOC=   1    0.3000000    
+
+ CREATE A HEXAHEDRAL VOLUME WITH
+ X-DISTANCES FROM      0.000000000     TO     0.5000000000    
+ Y-DISTANCES FROM      0.000000000     TO     0.9000000000E-02
+ Z-DISTANCES FROM      0.000000000     TO     0.2500000000    
+
+      OUTPUT VOLUME =     1
+
+ DEFINITION OF COMPONENT = _Y        ENTITY=VOLU
+
+ SELECT       FOR ITEM=VOLU COMPONENT=    
+  IN RANGE         1 TO          1 STEP          1
+
+        1  VOLUMES (OF        1  DEFINED) SELECTED BY  VSEL  COMMAND.
+
+ DEFINITION OF COMPONENT = _Y1       ENTITY=VOLU
+
+ SELECT      COMPONENT _Y                              
+
+ GENERATE NODES AND ELEMENTS IN ALL PICKED VOLUMES
+ 
+        SWEEPING VOLUME 1 FROM AREA 3 TO AREA 4
+        VOLUME 1 MESHED WITH 675 HEXAHEDRA AND 0 WEDGES
+
+ Volume Sweeping Complete 
+
+ The Following Volumes Were Successfully Swept
+     1
+
+ MAXIMUM NODE NUMBER        =      1024
+ MAXIMUM ELEMENT NUMBER     =       675
+
+ DELETE COMPONENT _Y                              
+
+ DELETE COMPONENT _Y1                             
+
+ DELETE COMPONENT _Y2                             
+
+
+ ***** ROUTINE COMPLETED *****  CP =         1.312
+
+
+
+ *** WARNING ***                         CP =       1.328   TIME= 16:12:02
+ DA is not a recognized BEGIN command, abbreviation, or macro.  This     
+ command will be ignored.                                                
+
+ *** WARNING ***                         CP =       1.328   TIME= 16:12:02
+ F is not a recognized BEGIN command, abbreviation, or macro.  This      
+ command will be ignored.                                                
+
+ *** WARNING ***                         CP =       1.328   TIME= 16:12:02
+ SOLVE is not a recognized BEGIN command, abbreviation, or macro.  This  
+ command will be ignored.                                                
+
+ PRINTOUT RESUMED BY /GOP
+1
+
+ ***** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 15.0      *****
+ ANSYS Multiphysics                                
+ 00954822          VERSION=WINDOWS x64   16:12:03  MAR 03, 2016 CP=      1.328
+
+                                                                               
+
+
+          ***** ANSYS ANALYSIS DEFINITION (PREP7) *****
+
+ WRITE ALL SELECTED ELEMENTS TO THE ELEMENT FILE.
+ START WRITTING AT THE BEGINNING OF FILE eout.txt                                                                                                                                                                                                                                                            
+ Using Format = 14(I6)
+
+     675 ELEMENTS WERE WRITTEN TO FILE= eout.txt                                                                                                                                                                                                                                                            
+
+ WRITE ALL SELECTED NODES TO THE NODES FILE.
+ START WRITING AT THE BEGINNING OF FILE nout.txt
+
+    1024 NODES WERE WRITTEN TO FILE= nout.txt
+
+ ***** END OF INPUT ENCOUNTERED *****
+
+
+ NUMBER OF WARNING MESSAGES ENCOUNTERED=          3
+ NUMBER OF ERROR   MESSAGES ENCOUNTERED=          0
+
+
+
+ ***** PROBLEM TERMINATED BY INDICATED ERROR(S) OR BY END OF INPUT DATA *****
+
++--------------------- A N S Y S   S T A T I S T I C S ------------------------+
+
+Release: 15.0       Build: UP20131014   Platform: WINDOWS x64 
+Date Run: 03/03/2016   Time: 16:12
+Windows Process ID:        12812
+
+Processor Model:        Intel(R) Core(TM) i5-2430M CPU @ 2.40GHz
+
+Compiler: Intel(R) FORTRAN Compiler Version 12.1.0  (Build: 20120928)
+          Microsoft(R) Visual C/C++ Compiler Version 16.0  (Build: 40219)
+          Intel(R) Math Kernel Library Version 11.0.5 Product Build 20130612
+
+Total number of cores available    :    4
+Number of physical cores available :    2
+Number of cores requested          :    2 (Shared Memory Parallel)
+
+GPU Acceleration: Not Requested
+
+Job Name: file
+Working Directory: C:\Users\Abhay2\Documents\MATLAB\MTP\AdaptMesh
+
+Total CPU time for main thread                    :        1.4 seconds
+Total CPU time summed for all threads             :        1.4 seconds
+
+Elapsed time spent pre-processing model (/PREP7)  :        2.9 seconds
+Elapsed time spent solution - preprocessing       :        0.0 seconds
+Elapsed time spent computing solution             :        0.0 seconds
+Elapsed time spent solution - postprocessing      :        0.0 seconds
+Elapsed time spent post-processing model (/POST1) :        0.0 seconds
+
+Maximum total memory used                         :        4.0 MB
+Maximum total memory allocated                    :     1024.0 MB
+Maximum total memory available                    :          4 GB
+
++------------------ E N D   A N S Y S   S T A T I S T I C S -------------------+
+
+
+ *---------------------------------------------------------------------------*
+ |                                                                           |
+ |                            ANSYS RUN COMPLETED                            |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ |            Release 15.0           UP20131014         WINDOWS x64          |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ | Database Requested(-db)   512 MB    Scratch Memory Requested       448 MB |
+ | Maximum Database Used       1 MB    Maximum Scratch Memory Used      3 MB |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ |        CP Time      (sec) =          1.359       Time  =  16:12:03        |
+ |        Elapsed Time (sec) =          6.000       Date  =  03/03/2016      |
+ |                                                                           |
+ *---------------------------------------------------------------------------*

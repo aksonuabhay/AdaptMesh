@@ -22,7 +22,10 @@ FITEM,2,5
 DA,P51X,ALL,
 FLST,2,1,1,ORDE,1   
 FITEM,2,626  
-F,P51X,FY,-100  
+F,P51X,FY,-100 
 SOLVE   
 )/GOP    ! Resume printing after UNDO process   
-)! We suggest a save at this point  
+)! We suggest a save at this point
+/PREP7 
+EWRITE,'eout.txt'
+NWRITE,'nout.txt'
