@@ -82,7 +82,7 @@
   DATABASE SIZE REQUESTED (MB) = 512         
 
  00954822          VERSION=WINDOWS x64     RELEASE= 15.0     UP20131014
- CURRENT JOBNAME=file  16:11:59  MAR 03, 2016 CP=      1.078
+ CURRENT JOBNAME=file  13:13:59  MAR 06, 2016 CP=      1.047
 
      1  /PMACRO 
      2  FINISH  
@@ -109,12 +109,13 @@
     23  FLST,2,1,1,ORDE,1   
     24  FITEM,2,626 
     25  F,P51X,FY,-100  
-    26  SOLVE   
-    27  )/GOP    ! Resume printing after UNDO process   
-    28  )! We suggest a save at this point  
-    29  /PREP7  
-    30  EWRITE,'eout.txt'   
-    31  NWRITE,'nout.txt'   
+    26  /SOL
+    27  SOLVE   
+    28  )/GOP    ! Resume printing after UNDO process   
+    29  )! We suggest a save at this point  
+    30  /PREP7  
+    31  EWRITE,'eout.txt'   
+    32  NWRITE,'nout.txt'   
 
  RUN SETUP PROCEDURE FROM FILE= C:\Program Files\ANSYS Inc\v150\ANSYS\apdl\start150.ans
 
@@ -125,7 +126,7 @@
 
  ***** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 15.0      *****
  ANSYS Multiphysics                                
- 00954822          VERSION=WINDOWS x64   16:12:00  MAR 03, 2016 CP=      1.156
+ 00954822          VERSION=WINDOWS x64   13:13:59  MAR 06, 2016 CP=      1.109
 
                                                                                
 
@@ -189,50 +190,116 @@
  DELETE COMPONENT _Y2                             
 
 
- ***** ROUTINE COMPLETED *****  CP =         1.312
+ ***** ROUTINE COMPLETED *****  CP =         1.125
 
 
 
- *** WARNING ***                         CP =       1.328   TIME= 16:12:02
+ *** WARNING ***                         CP =       1.141   TIME= 13:13:59
  DA is not a recognized BEGIN command, abbreviation, or macro.  This     
  command will be ignored.                                                
 
- *** WARNING ***                         CP =       1.328   TIME= 16:12:02
+ *** WARNING ***                         CP =       1.141   TIME= 13:13:59
  F is not a recognized BEGIN command, abbreviation, or macro.  This      
  command will be ignored.                                                
 
- *** WARNING ***                         CP =       1.328   TIME= 16:12:02
- SOLVE is not a recognized BEGIN command, abbreviation, or macro.  This  
- command will be ignored.                                                
+ *****  ANSYS SOLUTION ROUTINE  *****
 
- PRINTOUT RESUMED BY /GOP
+ *****  ANSYS SOLVE    COMMAND  *****
+
+ *** NOTE ***                            CP =       1.141   TIME= 13:13:59
+ There is no title defined for this analysis.                            
+
+ *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
+                ---GIVE SUGGESTIONS ONLY---
+
+ ELEMENT TYPE    1 IS SOLID185. IT IS ASSOCIATED WITH LINEAR MATERIALS ONLY
+ AND POISSON'S RATIO IS NOT GREATER THAN 0.49. KEYOPT(2)=3 IS SUGGESTED.
+
+
 1
 
  ***** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 15.0      *****
  ANSYS Multiphysics                                
- 00954822          VERSION=WINDOWS x64   16:12:03  MAR 03, 2016 CP=      1.328
+ 00954822          VERSION=WINDOWS x64   13:13:59  MAR 06, 2016 CP=      1.141
 
                                                                                
 
 
-          ***** ANSYS ANALYSIS DEFINITION (PREP7) *****
+                       S O L U T I O N   O P T I O N S
 
- WRITE ALL SELECTED ELEMENTS TO THE ELEMENT FILE.
- START WRITTING AT THE BEGINNING OF FILE eout.txt                                                                                                                                                                                                                                                            
- Using Format = 14(I6)
+   PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D                  
+   DEGREES OF FREEDOM. . . . . . UX   UY   UZ  
+   ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
+   GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
 
-     675 ELEMENTS WERE WRITTEN TO FILE= eout.txt                                                                                                                                                                                                                                                            
+ *** NOTE ***                            CP =       1.141   TIME= 13:13:59
+ Present time 0 is less than or equal to the previous time.  Time will   
+ default to 1.                                                           
 
- WRITE ALL SELECTED NODES TO THE NODES FILE.
- START WRITING AT THE BEGINNING OF FILE nout.txt
+ *** WARNING ***                         CP =       1.141   TIME= 13:13:59
+ No constraints have been defined using the D command.                   
 
-    1024 NODES WERE WRITTEN TO FILE= nout.txt
+ *** NOTE ***                            CP =       1.141   TIME= 13:13:59
+ The step data was checked and warning messages were found.              
+  Please review output or errors file (                                  
+ C:\Users\Abhay2\Documents\MATLAB\MTP\AdaptMesh\file.err ) for these     
+ warning messages.                                                       
 
- ***** END OF INPUT ENCOUNTERED *****
+ *** NOTE ***                            CP =       1.141   TIME= 13:13:59
+ The conditions for direct assembly have been met.  No .emat or .erot    
+ files will be produced.                                                 
+
+                      L O A D   S T E P   O P T I O N S
+
+   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
+   TIME AT END OF THE LOAD STEP. . . . . . . . . .  1.0000    
+   NUMBER OF SUBSTEPS. . . . . . . . . . . . . . .     1
+   STEP CHANGE BOUNDARY CONDITIONS . . . . . . . .    NO
+   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
+   DATABASE OUTPUT CONTROLS. . . . . . . . . . . .ALL DATA WRITTEN
+                                                  FOR THE LAST SUBSTEP
+
+
+ SOLUTION MONITORING INFO IS WRITTEN TO FILE= file.mntr                                                                                                                                                                                                                                                           
+
+
+ Range of element maximum matrix coefficients in global coordinates
+ Maximum = 4.103487391E+09 at element 135.                               
+ Minimum = 4.103487391E+09 at element 54.                                
+
+   *** ELEMENT MATRIX FORMULATION TIMES
+  TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+     1       675  SOLID185      0.188   0.000278
+ Time at end of element matrix formulation CP = 1.390625.                
+
+ SPARSE MATRIX DIRECT SOLVER.
+  Number of equations =        3072,    Maximum wavefront =     66
+  Memory allocated for solver =                 15.259 MB
+  Memory required for in-core =                  7.335 MB
+  Optimal memory required for out-of-core =      2.139 MB
+  Minimum memory required for out-of-core =      1.707 MB
+
+ *** NOTE ***                            CP =       1.484   TIME= 13:13:59
+ The Sparse Matrix solver is currently running in the in-core memory     
+ mode.  This memory mode uses the most amount of memory in order to      
+ avoid using the hard drive as much as possible, which most often        
+ results in the fastest solution time.  This mode is recommended if      
+ enough physical memory is present to accommodate all of the solver      
+ data.                                                                   
+ Sparse solver maximum pivot= 2.325506063E+10 at node 755 UY.            
+ Sparse solver minimum pivot= -6.57306671 at node 584 UZ.                
+ Sparse solver minimum pivot in absolute value= 2.067477507E-04 at node  
+ 570 UZ.                                                                 
+
+ *** ERROR ***                           CP =       1.547   TIME= 13:13:59
+ There is at least 1 small equation solver pivot term (e.g., at the UZ   
+ degree of freedom of node 570).  Please check for an insufficiently     
+ constrained model.                                                      
 
 
  NUMBER OF WARNING MESSAGES ENCOUNTERED=          3
- NUMBER OF ERROR   MESSAGES ENCOUNTERED=          0
+ NUMBER OF ERROR   MESSAGES ENCOUNTERED=          1
 
 
 
@@ -241,8 +308,8 @@
 +--------------------- A N S Y S   S T A T I S T I C S ------------------------+
 
 Release: 15.0       Build: UP20131014   Platform: WINDOWS x64 
-Date Run: 03/03/2016   Time: 16:12
-Windows Process ID:        12812
+Date Run: 03/06/2016   Time: 13:13
+Windows Process ID:         3344
 
 Processor Model:        Intel(R) Core(TM) i5-2430M CPU @ 2.40GHz
 
@@ -260,15 +327,17 @@ Job Name: file
 Working Directory: C:\Users\Abhay2\Documents\MATLAB\MTP\AdaptMesh
 
 Total CPU time for main thread                    :        1.4 seconds
-Total CPU time summed for all threads             :        1.4 seconds
+Total CPU time summed for all threads             :        1.6 seconds
 
-Elapsed time spent pre-processing model (/PREP7)  :        2.9 seconds
+Elapsed time spent pre-processing model (/PREP7)  :        0.0 seconds
 Elapsed time spent solution - preprocessing       :        0.0 seconds
-Elapsed time spent computing solution             :        0.0 seconds
+Elapsed time spent computing solution             :        0.2 seconds
 Elapsed time spent solution - postprocessing      :        0.0 seconds
 Elapsed time spent post-processing model (/POST1) :        0.0 seconds
 
-Maximum total memory used                         :        4.0 MB
+Equation solver computational rate                :     3975.7 Mflops
+
+Maximum total memory used                         :       23.0 MB
 Maximum total memory allocated                    :     1024.0 MB
 Maximum total memory available                    :          4 GB
 
@@ -286,11 +355,11 @@ Maximum total memory available                    :          4 GB
  |---------------------------------------------------------------------------|
  |                                                                           |
  | Database Requested(-db)   512 MB    Scratch Memory Requested       448 MB |
- | Maximum Database Used       1 MB    Maximum Scratch Memory Used      3 MB |
+ | Maximum Database Used       1 MB    Maximum Scratch Memory Used     22 MB |
  |                                                                           |
  |---------------------------------------------------------------------------|
  |                                                                           |
- |        CP Time      (sec) =          1.359       Time  =  16:12:03        |
- |        Elapsed Time (sec) =          6.000       Date  =  03/03/2016      |
+ |        CP Time      (sec) =          1.562       Time  =  13:13:59        |
+ |        Elapsed Time (sec) =          3.000       Date  =  03/06/2016      |
  |                                                                           |
  *---------------------------------------------------------------------------*

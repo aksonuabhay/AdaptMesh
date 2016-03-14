@@ -23,6 +23,7 @@ DA,P51X,ALL,
 FLST,2,1,1,ORDE,1   
 FITEM,2,626  
 F,P51X,FY,-100 
+/SOL
 SOLVE   
 )/GOP    ! Resume printing after UNDO process   
 )! We suggest a save at this point
